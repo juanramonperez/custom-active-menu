@@ -54,3 +54,23 @@ function custom_active_menu_form_menu_edit_item_alter(&$form, &$form_state){
       '#default_value' => isset($form['original_item']['#value']['options']['custom_active_menu']['pages']) ? $form['original_item']['#value']['options']['custom_active_menu']['pages'] : '',
   );
 }
+
+/**
+ * Implementation of hook_preprocess_menu_link().
+ */
+function custom_active_menu_preprocess_menu_link(&$variables) {
+  dpm($variables, '$variable');
+  if(isset($variables['element']['#localized_options']['custom_active_menu']['pages'])){    
+    $pages  = $variables['element']['#localized_options']['custom_active_menu']['pages'];
+    $path   = drupal_get_path_alias($_GET['q']);
+    // Compare with the internal and path alias (if any).
+    $page_match = drupal_match_path($path, $pages);
+    if ($path != $_GET['q']) {
+      $page_match = $page_match || drupal_match_path($_GET['q'], $pages);
+    }
+  }
+  if(isset($page_match) && $page_match){
+    $variables['element']['#attributes']['class'][] = variable_get('custom_active_menu_li_classes', 'active-trail');
+    $variables['element']['#localized_options']['attributes']['class'][] = variable_get('custom_active_menu_a_classes', 'active');
+  }
+}
