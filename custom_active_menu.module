@@ -58,8 +58,7 @@ function custom_active_menu_form_menu_edit_item_alter(&$form, &$form_state){
 /**
  * Implementation of hook_preprocess_menu_link().
  */
-function custom_active_menu_preprocess_menu_link(&$variables) {
-  dpm($variables, '$variable');
+function custom_active_menu_preprocess_menu_link(&$variables) {  
   if(isset($variables['element']['#localized_options']['custom_active_menu']['pages'])){    
     $pages  = $variables['element']['#localized_options']['custom_active_menu']['pages'];
     $path   = drupal_get_path_alias($_GET['q']);
