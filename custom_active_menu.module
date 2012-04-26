@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Allows specify which menu item is active and the classes that will be 
+ * Allows specify which menu item is active and the classes that will be
  * added to it.
  */
 
