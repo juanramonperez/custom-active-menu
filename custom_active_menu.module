@@ -1,5 +1,10 @@
 <?php
 /**
+ * @file
+ * Allows specify which menu item is active and the classes that will be added to it.
+ */
+
+/**
  * Implements hook_menu().
  */
 function custom_active_menu_menu() {
