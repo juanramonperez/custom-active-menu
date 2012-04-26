@@ -1,10 +1,10 @@
 <?php
 /**
- * Implementation of hook_menu()
+ * Implements hook_menu().
  */
 function custom_active_menu_menu() {
   $items['admin/config/user-interface/custom-active-menu'] = array(
-    'title' => t('Custom Active Menu'),
+    'title' => 'Custom Active Menu',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('custom_active_menu_settings_form'),
     'access arguments' => array('administer custom_active_menu'),
@@ -12,8 +12,8 @@ function custom_active_menu_menu() {
   return $items;
 }
 
-/*
- * Implementation of hook_permission()
+/**
+ * Implements hook_permission().
  */
 function custom_active_menu_permission() {
   return array(
@@ -24,7 +24,7 @@ function custom_active_menu_permission() {
   );
 }
 
-/*
+/**
  * Settings form configuration
  */
 function custom_active_menu_settings_form($form_state) {
@@ -44,8 +44,8 @@ function custom_active_menu_settings_form($form_state) {
   return system_settings_form($form);
 }
 
-/*
- * Implementation of hook_menu_edit_item_alter()
+/**
+ * Implements hook_menu_edit_item_alter().
  */
 function custom_active_menu_form_menu_edit_item_alter(&$form, &$form_state) {
   if (user_access('administer custom_active_menu')) {
@@ -63,13 +63,14 @@ function custom_active_menu_form_menu_edit_item_alter(&$form, &$form_state) {
     $form['options']['custom_active_menu']['pages'] = array(
       '#type' => 'textarea',
       '#title' => t('Pages'),
-      '#description' => t('Pages where the menu will be active, Enter one page per line as Drupal paths. The \'*\' character is a wildcard. Example paths are blog for the blog page and blog/* for every personal blog.'),
+      '#description' => t('Pages where the menu will be active, Enter one page per line as Drupal paths. The "*" character is a wildcard. Example paths are blog for the blog page and blog/* for every personal blog.'),
       '#default_value' => isset($form['original_item']['#value']['options']['custom_active_menu']['pages']) ? $form['original_item']['#value']['options']['custom_active_menu']['pages'] : '',
     );
   }
 }
+
 /**
- * Implementation of hook_preprocess_menu_link().
+ * Implements hook_preprocess_menu_link().
  */
 function custom_active_menu_preprocess_menu_link(&$variables) {
   if (isset($variables['element']['#localized_options']['custom_active_menu']['pages'])) {
