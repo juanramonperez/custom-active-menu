@@ -1,18 +1,10 @@
 -- SUMMARY --
 
-This module provides an easy way to setup Omnistar Affiliate tracking code to
-your site, including to your drupal's footer the Javascript code for the
-integration.
+This module provides an easy way to indicate which menu item is active depending 
+the path that the users are seeing.
 
-What is Omnistar Affiliate:
-It's a SAAS software that give you the tools and resources you need to
-successfully grow your business with affiliate and online marketing.
-
-For a full description of the module, visit the project page:
-  http://drupal.org/project/omnistar_affiliate
-
-To submit bug reports and feature suggestions, or to track changes:
-  http://drupal.org/project/issues/omnistar_affiliate
+IMPORTANT
+This assumes they are using theme('menu_link') for the menu rendering to html.
 
 -- FEATURES --
 
@@ -23,10 +15,11 @@ applied to the active menu item
 * Provides a permission setting to allow administrators manage the features 
 mentioned above
 * Works with nice_menus module
+* Works with path aliases
 
 -- REQUIREMENTS --
 
-* PHP 5.1.2+
+* menu module enabled
 
 -- INSTALLATION --
 
