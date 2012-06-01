@@ -1,0 +1,4 @@
+name = Custom Active Menu
+description =  Allows specify what menu item is active and that classes will be added to this
+core = 7.x
+version = 7.x-1.0
