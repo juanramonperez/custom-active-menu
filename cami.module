@@ -1,6 +1,6 @@
 <?php
 /**
- * Implementation of hook_menu()
+ * Implements hook_menu()
  */
 function cami_menu() {
   $items['admin/config/user-interface/custom-active-menu-item'] = array(
@@ -14,7 +14,7 @@ function cami_menu() {
 }
 
 /*
- * Implementation of hook_permission()
+ * Implements hook_permission()
  */
 
 function cami_permission() {
@@ -35,7 +35,7 @@ function cami_settings_form($form_state) {
   $form['cami_li_classes'] = array(
       '#type' => 'textfield',
       '#title' => t('List classes'),
-     '#description' => t('Classes applied to <strong>li</strong> element (separate classes with spaces)'),
+      '#description' => t('Classes applied to <strong>li</strong> element (separate classes with spaces)'),
       '#default_value' => variable_get('cami_li_classes', '')
   );
   $form['cami_a_classes'] = array(
@@ -50,6 +50,7 @@ function cami_settings_form($form_state) {
 /*
  * Implementation of hook_menu_edit_item_alter()
  */
+
 function cami_form_menu_edit_item_alter(&$form, &$form_state) {
   if (user_access('administer cami')) {
     $form['options'] = array(
