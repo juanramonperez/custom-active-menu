@@ -1,6 +1,6 @@
 <?php
 /**
- * Implements hook_menu()
+ * Implements hook_menu().
  */
 function cami_menu() {
   $items['admin/config/user-interface/custom-active-menu-item'] = array(
