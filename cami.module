@@ -4,8 +4,8 @@
  */
 function cami_menu() {
   $items['admin/config/user-interface/custom-active-menu-item'] = array(
-      'title' => t('Custom Active Menu Item'),
-      'description' => t('Configure Custom Active Menu Item'),
+      'title' => 'Custom Active Menu Item',
+      'description' => 'Configure Custom Active Menu Item',
       'page callback' => 'drupal_get_form',
       'page arguments' => array('cami_settings_form'),
       'access arguments' => array('administer cami'),
