@@ -70,7 +70,7 @@ function cami_form_menu_edit_item_alter(&$form, &$form_state) {
     $form['options']['cami']['pages'] = array(
       '#type' => 'textarea',
       '#title' => t('Pages'),
-      '#description' => t("Pages where the menu will be active, Enter one page per line as Drupal paths. The '*' character is a wildcard. Example paths are blog for the blog page and blog/* for every personal blog."),
+      '#description' => t("Pages where the menu item will be active, Enter one page per line as Drupal paths. The '*' character is a wildcard. Example paths are blog for the blog page and blog/* for every personal blog."),
       '#default_value' => isset($form['original_item']['#value']['options']['cami']['pages']) ? $form['original_item']['#value']['options']['cami']['pages'] : '',
     );
   }
