@@ -1,7 +1,7 @@
 -- SUMMARY --
 
-This module provides an easy way to indicate which menu item is active depending 
-the path that the users are seeing.
+This module provides an easy way to indicate which menu item is active adding 
+the active CSS class depending the path that the users are seeing.
 
 IMPORTANT
 This assumes they are using theme('menu_link') for the menu rendering to html.
@@ -14,7 +14,7 @@ applied to the active menu item
 "Custom Active Menu Item") to provide the path where will be active
 * Provides a permission setting to allow administrators manage the features 
 mentioned above
-* Works with nice_menus module
+* Is complatible with nice_menus module
 * Works with path aliases
 
 -- REQUIREMENTS --
