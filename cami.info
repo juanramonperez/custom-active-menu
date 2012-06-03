@@ -1,4 +1,5 @@
 name = Custom Active Menu Item
 description =  Allows specify what menu item is active and that classes will be added to this
 core = 7.x
+configure = admin/config/user-interface/custom-active-menu-item
 dependencies[] = menu
