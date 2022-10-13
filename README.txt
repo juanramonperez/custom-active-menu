@@ -3,7 +3,7 @@
 This module provides an easy way to indicate which menu item is active adding 
 the active CSS class depending the path that the users are seeing.
 
-IMPORTANT
+IMPORTANT NOTES
 This assumes they are using theme('menu_link') for the menu rendering to html.
 
 -- FEATURES --
